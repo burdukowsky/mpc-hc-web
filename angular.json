@@ -23,7 +23,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "src/favicons",
+                "output": "/"
+              },
               "src/assets"
             ],
             "styles": [
@@ -88,7 +92,11 @@
             ],
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
+              {
+                "glob": "**/*",
+                "input": "src/favicons",
+                "output": "/"
+              },
               "src/assets"
             ]
           }
