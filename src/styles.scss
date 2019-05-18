@@ -8,6 +8,10 @@ $font-family-base: 'Roboto', 'Helvetica Neue', sans-serif;
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -29,7 +33,10 @@ body {
   outline: none;
 }
 
-.mat-raised-button {
+$btn-height: 36px;
+$btn-min-width: 64px;
+
+.btn {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -104,7 +111,7 @@ body {
     opacity: 0;
   }
 
-  &.mat-raised-button-primary {
+  &.btn-primary {
     color: white;
     background-color: #3f51b5;
 
@@ -113,4 +120,14 @@ body {
       background-color: white;
     }
   }
+
+  &.btn-lg {
+    $lg-multiplier: 1.5;
+    min-width: $btn-min-width * $lg-multiplier;
+    height: $btn-height * $lg-multiplier;
+  }
+}
+
+.text-center {
+  text-align: center;
 }
