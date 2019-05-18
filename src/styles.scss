@@ -1,4 +1,5 @@
 @import '~roboto-fontface/css/roboto/roboto-fontface.css';
+@import '~material-design-icons/iconfont/material-icons.css';
 
 $font-family-base: 'Roboto', 'Helvetica Neue', sans-serif;
 
@@ -26,7 +27,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: black;
-  background-color: white;
+  background-color: #f2f2f2;
 }
 
 *:focus {
@@ -43,8 +44,8 @@ $btn-min-width: 64px;
   border: none;
   border-radius: 4px;
   padding: 0 16px;
-  min-width: 64px;
-  height: 36px;
+  min-width: $btn-min-width;
+  height: $btn-height;
   vertical-align: middle;
   text-align: center;
   text-overflow: ellipsis;
@@ -55,12 +56,16 @@ $btn-min-width: 64px;
   font-family: $font-family-base;
   font-size: 14px;
   font-weight: 500;
-  line-height: 36px;
+  line-height: $btn-height;
   overflow: hidden;
   outline: none;
   cursor: pointer;
   transition: box-shadow 0.2s;
   margin: 0.25rem;
+
+  & * {
+    vertical-align: middle;
+  }
 
   &::-moz-focus-inner {
     border: none;
@@ -125,6 +130,7 @@ $btn-min-width: 64px;
     $lg-multiplier: 1.5;
     min-width: $btn-min-width * $lg-multiplier;
     height: $btn-height * $lg-multiplier;
+    line-height: $btn-height * $lg-multiplier;
   }
 }
 
