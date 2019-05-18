@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 import {isNumeric} from 'rxjs/internal-compatibility';
@@ -32,14 +32,21 @@ function hostValidator(control: AbstractControl): { [key: string]: boolean } | n
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
 })
-export class SettingsComponent {
+export class SettingsComponent implements OnInit {
 
-  settingsForm = new FormGroup({
-    host: new FormControl(this.localStorageService.getHost(), [hostValidator])
-  });
+  hostExists: boolean;
+  settingsForm: FormGroup;
 
   constructor(private localStorageService: LocalStorageService,
               private router: Router) {
+  }
+
+  ngOnInit() {
+    const host = this.localStorageService.getHost();
+    this.hostExists = host != null;
+    this.settingsForm = new FormGroup({
+      host: new FormControl(host, [hostValidator])
+    });
   }
 
   save() {

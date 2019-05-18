@@ -12,4 +12,9 @@
           [disabled]="!settingsForm.valid">
     Save
   </button>
+  <a *ngIf="hostExists"
+     routerLink="/"
+     class="btn btn-primary btn-lg">
+    Cancel
+  </a>
 </form>

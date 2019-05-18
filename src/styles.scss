@@ -63,6 +63,7 @@ $lg-multiplier: 1.5;
   cursor: pointer;
   transition: box-shadow 0.2s;
   margin: $form-control-margin;
+  text-decoration: none;
 
   & * {
     vertical-align: middle;
