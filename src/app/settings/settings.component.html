@@ -1,0 +1,15 @@
+<form [formGroup]="settingsForm" (ngSubmit)="save()">
+  <label for="hostInput">Host</label>
+  <br>
+  <input type="text"
+         id="hostInput"
+         class="form-control form-control-lg"
+         placeholder="192.168.0.2:13579"
+         formControlName="host">
+  <br>
+  <button class="btn btn-primary btn-lg"
+          type="submit"
+          [disabled]="!settingsForm.valid">
+    Save
+  </button>
+</form>
