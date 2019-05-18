@@ -1,4 +1,23 @@
 export enum Command {
   Play = '887',
-  Pause = '888'
+  Pause = '888',
+  Stop = '890',
+  Forward = '922',
+  Back = '921',
+  IncreaseSpeed = '895',
+  DecreaseSpeed = '894',
+  SeekForwardMedium = '902',
+  SeekBackwardMedium = '901',
+  Mute = '909',
+  VolumeDown = '908',
+  VolumeUp = '907',
+  Fullscreen = '830',
+  NextAudio = '952',
+  PreviousAudio = '953',
+  NextSubtitles = '954',
+  PreviousSubtitles = '955',
+  NextPlaylistItem = '920',
+  PreviousPlaylistItem = '919',
+  VideoFrameInside = '839',
+  VideoFrameOutside = '840'
 }
