@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {Command} from '../command.enum';
 import {ControlService} from '../services/control.service';
 import {LocalStorageService} from '../services/local-storage.service';
+import {Layout} from '../layout.enum';
 
 @Component({
   selector: 'app-main',
@@ -13,6 +14,9 @@ import {LocalStorageService} from '../services/local-storage.service';
 export class MainComponent implements OnInit {
 
   command = Command;
+  layout = Layout;
+
+  currentLayout = Layout.Stretch;
 
   constructor(private controlService: ControlService,
               private localStorageService: LocalStorageService,
@@ -27,6 +31,10 @@ export class MainComponent implements OnInit {
 
   do(command: Command): void {
     this.controlService.do(command).subscribe();
+  }
+
+  switchLayout() {
+    this.currentLayout = this.currentLayout === Layout.Classic ? Layout.Stretch : Layout.Classic;
   }
 
 }

@@ -57,7 +57,7 @@ $lg-multiplier: 1.5;
   font-family: inherit;
   font-size: 14px;
   font-weight: 500;
-  line-height: $form-control-height;
+  line-height: normal;
   overflow: hidden;
   outline: none;
   cursor: pointer;
@@ -131,8 +131,17 @@ $lg-multiplier: 1.5;
   &.btn-lg {
     min-width: $btn-min-width * $lg-multiplier;
     height: $form-control-height * $lg-multiplier;
-    line-height: $form-control-height * $lg-multiplier;
   }
+
+  &.btn-stretch {
+    height: initial;
+  }
+}
+
+a.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .text-center {

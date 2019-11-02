@@ -1,82 +1,246 @@
-<div id="controlsWrapper">
-  <div class="text-center">
-    <button class="btn btn-primary btn-lg" (click)="do(command.Play)">
-      <i class="material-icons">play_arrow</i>
-    </button>
-    <button class="btn btn-primary btn-lg" (click)="do(command.Pause)">
-      <i class="material-icons">pause</i>
-    </button>
-    <button class="btn btn-primary btn-lg" (click)="do(command.Stop)">
-      <i class="material-icons">stop</i>
-    </button>
-    <br>
-    <button class="btn btn-primary btn-lg" (click)="do(command.Back)">
-      <i class="material-icons">skip_previous</i>
-    </button>
-    <button class="btn btn-primary btn-lg" (click)="do(command.Forward)">
-      <i class="material-icons">skip_next</i>
-    </button>
-    <br>
-    <button class="btn btn-primary btn-lg" (click)="do(command.DecreaseSpeed)">
-      <i class="material-icons">fast_rewind</i>
-    </button>
-    <button class="btn btn-primary btn-lg" (click)="do(command.IncreaseSpeed)">
-      <i class="material-icons">fast_forward</i>
-    </button>
-    <br>
-    <button class="btn btn-primary btn-lg" (click)="do(command.Mute)">
-      <i class="material-icons">volume_off</i>
-    </button>
-    <button class="btn btn-primary btn-lg" (click)="do(command.VolumeDown)">
-      <i class="material-icons">volume_down</i>
-    </button>
-    <button class="btn btn-primary btn-lg" (click)="do(command.VolumeUp)">
-      <i class="material-icons">volume_up</i>
-    </button>
-    <br>
-    <button class="btn btn-primary btn-lg" (click)="do(command.SeekBackwardMedium)">
-      -5s
-    </button>
-    <button class="btn btn-primary btn-lg" (click)="do(command.SeekForwardMedium)">
-      +5s
-    </button>
-    <br>
-    <button class="btn btn-primary btn-lg" (click)="do(command.PreviousAudio)">
-      <i class="material-icons">chevron_left</i> Audio
-    </button>
-    <button class="btn btn-primary btn-lg" (click)="do(command.NextAudio)">
-      Audio <i class="material-icons">chevron_right</i>
-    </button>
-    <br>
-    <button class="btn btn-primary btn-lg" (click)="do(command.PreviousSubtitles)">
-      <i class="material-icons">chevron_left</i> Subtitles
-    </button>
-    <button class="btn btn-primary btn-lg" (click)="do(command.NextSubtitles)">
-      Subtitles <i class="material-icons">chevron_right</i>
-    </button>
-    <br>
-    <button class="btn btn-primary btn-lg" (click)="do(command.PreviousPlaylistItem)">
-      <i class="material-icons">chevron_left</i> Playlist
-    </button>
-    <button class="btn btn-primary btn-lg" (click)="do(command.NextPlaylistItem)">
-      Playlist <i class="material-icons">chevron_right</i>
-    </button>
-    <br>
-    <button class="btn btn-primary btn-lg" (click)="do(command.Fullscreen)">
-      <i class="material-icons">fullscreen</i>
-    </button>
-    <br>
-    <button class="btn btn-primary btn-lg" (click)="do(command.VideoFrameInside)">
-      Video Frame Inside
-    </button>
-    <br>
-    <button class="btn btn-primary btn-lg" (click)="do(command.VideoFrameOutside)">
-      Video Frame Outside
-    </button>
-    <br>
-    <a routerLink="/settings"
-       class="btn btn-primary btn-lg">
-      Settings
-    </a>
+<ng-container [ngSwitch]="currentLayout">
+
+  <div id="classicLayout" *ngSwitchCase="layout.Classic">
+    <div class="text-center">
+
+      <button class="btn btn-primary btn-lg" (click)="do(command.Play)">
+        <i class="material-icons">play_arrow</i>
+      </button>
+      <button class="btn btn-primary btn-lg" (click)="do(command.Pause)">
+        <i class="material-icons">pause</i>
+      </button>
+      <button class="btn btn-primary btn-lg" (click)="do(command.Stop)">
+        <i class="material-icons">stop</i>
+      </button>
+
+      <br>
+
+      <button class="btn btn-primary btn-lg" (click)="do(command.Back)">
+        <i class="material-icons">skip_previous</i>
+      </button>
+      <button class="btn btn-primary btn-lg" (click)="do(command.Forward)">
+        <i class="material-icons">skip_next</i>
+      </button>
+
+      <br>
+
+      <button class="btn btn-primary btn-lg" (click)="do(command.DecreaseSpeed)">
+        <i class="material-icons">fast_rewind</i>
+      </button>
+      <button class="btn btn-primary btn-lg" (click)="do(command.IncreaseSpeed)">
+        <i class="material-icons">fast_forward</i>
+      </button>
+
+      <br>
+
+      <button class="btn btn-primary btn-lg" (click)="do(command.Mute)">
+        <i class="material-icons">volume_off</i>
+      </button>
+      <button class="btn btn-primary btn-lg" (click)="do(command.VolumeDown)">
+        <i class="material-icons">volume_down</i>
+      </button>
+      <button class="btn btn-primary btn-lg" (click)="do(command.VolumeUp)">
+        <i class="material-icons">volume_up</i>
+      </button>
+
+      <br>
+
+      <button class="btn btn-primary btn-lg" (click)="do(command.SeekBackwardMedium)">
+        -5s
+      </button>
+      <button class="btn btn-primary btn-lg" (click)="do(command.SeekForwardMedium)">
+        +5s
+      </button>
+
+      <br>
+
+      <button class="btn btn-primary btn-lg" (click)="do(command.PreviousAudio)">
+        <i class="material-icons">chevron_left</i> Audio
+      </button>
+      <button class="btn btn-primary btn-lg" (click)="do(command.NextAudio)">
+        Audio <i class="material-icons">chevron_right</i>
+      </button>
+
+      <br>
+
+      <button class="btn btn-primary btn-lg" (click)="do(command.PreviousSubtitles)">
+        <i class="material-icons">chevron_left</i> Subtitles
+      </button>
+      <button class="btn btn-primary btn-lg" (click)="do(command.NextSubtitles)">
+        Subtitles <i class="material-icons">chevron_right</i>
+      </button>
+
+      <br>
+
+      <button class="btn btn-primary btn-lg" (click)="do(command.PreviousPlaylistItem)">
+        <i class="material-icons">chevron_left</i> Playlist
+      </button>
+      <button class="btn btn-primary btn-lg" (click)="do(command.NextPlaylistItem)">
+        Playlist <i class="material-icons">chevron_right</i>
+      </button>
+
+      <br>
+
+      <button class="btn btn-primary btn-lg" (click)="do(command.Fullscreen)">
+        <i class="material-icons">fullscreen</i>
+      </button>
+
+      <br>
+
+      <button class="btn btn-primary btn-lg" (click)="do(command.VideoFrameInside)">
+        Video Frame Inside
+      </button>
+
+      <br>
+
+      <button class="btn btn-primary btn-lg" (click)="do(command.VideoFrameOutside)">
+        Video Frame Outside
+      </button>
+
+      <br>
+
+      <button class="btn btn-primary btn-lg"
+              (click)="switchLayout()">
+        Switch Layout
+      </button>
+      <a routerLink="/settings"
+         class="btn btn-primary btn-lg">
+        Settings
+      </a>
+
+    </div>
   </div>
-</div>
+
+  <div id="stretchLayout" *ngSwitchCase="layout.Stretch">
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.Play)">
+        <i class="material-icons">play_arrow</i>
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.Pause)">
+        <i class="material-icons">pause</i>
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.Stop)">
+        <i class="material-icons">stop</i>
+      </button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.Back)">
+        <i class="material-icons">skip_previous</i>
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.Forward)">
+        <i class="material-icons">skip_next</i>
+      </button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.DecreaseSpeed)">
+        <i class="material-icons">fast_rewind</i>
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.IncreaseSpeed)">
+        <i class="material-icons">fast_forward</i>
+      </button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.Mute)">
+        <i class="material-icons">volume_off</i>
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.VolumeDown)">
+        <i class="material-icons">volume_down</i>
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.VolumeUp)">
+        <i class="material-icons">volume_up</i>
+      </button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.SeekBackwardMedium)">
+        -5s
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.SeekForwardMedium)">
+        +5s
+      </button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.PreviousAudio)">
+        <i class="material-icons">chevron_left</i> Audio
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.NextAudio)">
+        Audio <i class="material-icons">chevron_right</i>
+      </button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.PreviousSubtitles)">
+        <i class="material-icons">chevron_left</i> Subtitles
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.NextSubtitles)">
+        Subtitles <i class="material-icons">chevron_right</i>
+      </button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.PreviousPlaylistItem)">
+        <i class="material-icons">chevron_left</i> Playlist
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.NextPlaylistItem)">
+        Playlist <i class="material-icons">chevron_right</i>
+      </button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.Fullscreen)">
+        <i class="material-icons">fullscreen</i>
+      </button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.VideoFrameInside)">
+        Video Frame Inside
+      </button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.VideoFrameOutside)">
+        Video Frame Outside
+      </button>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary btn-stretch"
+              (click)="switchLayout()">
+        Switch Layout
+      </button>
+      <a routerLink="/settings"
+         class="btn btn-primary btn-stretch">
+        Settings
+      </a>
+    </div>
+
+  </div>
+
+</ng-container>
