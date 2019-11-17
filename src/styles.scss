@@ -106,8 +106,7 @@ $lg-multiplier: 1.5;
 
   // Disabled
   &:disabled {
-    color: rgba(0, 0, 0, 0.38) !important;
-    background-color: rgba(0, 0, 0, 0.12) !important;
+    opacity: 0.5;
     box-shadow: none;
     cursor: initial;
   }
