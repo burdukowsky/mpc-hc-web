@@ -109,10 +109,10 @@ $lg-multiplier: 1.5;
     opacity: 0.5;
     box-shadow: none;
     cursor: initial;
-  }
 
-  &:disabled::after {
-    opacity: 0;
+    &::after {
+      opacity: 0;
+    }
   }
 
   &.btn-primary {
