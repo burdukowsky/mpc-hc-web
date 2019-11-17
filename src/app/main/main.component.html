@@ -123,19 +123,31 @@
         <i class="material-icons">pause</i>
       </button>
       <button class="btn btn-primary btn-stretch"
+              (click)="do(command.Back)">
+        <i class="material-icons">skip_previous</i>
+      </button>
+      <button class="btn btn-primary btn-stretch"
               (click)="do(command.Stop)">
         <i class="material-icons">stop</i>
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.Forward)">
+        <i class="material-icons">skip_next</i>
       </button>
     </div>
 
     <div class="row">
       <button class="btn btn-primary btn-stretch"
-              (click)="do(command.Back)">
-        <i class="material-icons">skip_previous</i>
+              (click)="do(command.VolumeDown)">
+        <i class="material-icons">volume_down</i>
       </button>
       <button class="btn btn-primary btn-stretch"
-              (click)="do(command.Forward)">
-        <i class="material-icons">skip_next</i>
+              (click)="do(command.VolumeUp)">
+        <i class="material-icons">volume_up</i>
+      </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.SeekForwardMedium)">
+        +5s
       </button>
     </div>
 
@@ -148,6 +160,10 @@
               (click)="do(command.IncreaseSpeed)">
         <i class="material-icons">fast_forward</i>
       </button>
+      <button class="btn btn-primary btn-stretch"
+              (click)="do(command.SeekBackwardMedium)">
+        -5s
+      </button>
     </div>
 
     <div class="row">
@@ -156,23 +172,8 @@
         <i class="material-icons">volume_off</i>
       </button>
       <button class="btn btn-primary btn-stretch"
-              (click)="do(command.VolumeDown)">
-        <i class="material-icons">volume_down</i>
-      </button>
-      <button class="btn btn-primary btn-stretch"
-              (click)="do(command.VolumeUp)">
-        <i class="material-icons">volume_up</i>
-      </button>
-    </div>
-
-    <div class="row">
-      <button class="btn btn-primary btn-stretch"
-              (click)="do(command.SeekBackwardMedium)">
-        -5s
-      </button>
-      <button class="btn btn-primary btn-stretch"
-              (click)="do(command.SeekForwardMedium)">
-        +5s
+              (click)="do(command.Fullscreen)">
+        <i class="material-icons">fullscreen</i>
       </button>
     </div>
 
@@ -211,19 +212,9 @@
 
     <div class="row">
       <button class="btn btn-primary btn-stretch"
-              (click)="do(command.Fullscreen)">
-        <i class="material-icons">fullscreen</i>
-      </button>
-    </div>
-
-    <div class="row">
-      <button class="btn btn-primary btn-stretch"
               (click)="do(command.VideoFrameInside)">
         Video Frame Inside
       </button>
-    </div>
-
-    <div class="row">
       <button class="btn btn-primary btn-stretch"
               (click)="do(command.VideoFrameOutside)">
         Video Frame Outside

@@ -35,7 +35,6 @@ body {
 $form-control-border-radius: 4px;
 $form-control-height: 36px;
 $form-control-margin: 0.25rem;
-$btn-min-width: 64px;
 $lg-multiplier: 1.5;
 
 .btn {
@@ -45,7 +44,6 @@ $lg-multiplier: 1.5;
   border: none;
   border-radius: $form-control-border-radius;
   padding: 0 16px;
-  min-width: $btn-min-width;
   height: $form-control-height;
   vertical-align: middle;
   text-align: center;
@@ -129,7 +127,6 @@ $lg-multiplier: 1.5;
   }
 
   &.btn-lg {
-    min-width: $btn-min-width * $lg-multiplier;
     height: $form-control-height * $lg-multiplier;
   }
 
