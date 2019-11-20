@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 import {isLayout, Layout} from '../layout.enum';
-import {AppTheme, isAppTheme} from '../app-theme.type';
+import {AppTheme, isAppTheme} from '../app-theme.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class LocalStorageService {
   init(): Promise<any> {
     return new Promise(resolve => {
       if (this.getTheme() == null) {
-        this.setTheme('dark-theme');
+        this.setTheme(AppTheme.Dark);
       }
       if (this.getLayout() == null) {
         this.setLayout(Layout.Stretch);

@@ -8,6 +8,7 @@ import {AppComponent} from './app.component';
 import {MainComponent} from './main/main.component';
 import {SettingsComponent} from './settings/settings.component';
 import {LocalStorageService} from './services/local-storage.service';
+import {ValuesPipe} from './values.pipe';
 
 export function LocalStorageServiceFactory(localStorageService: LocalStorageService): () => Promise<any> {
   return () => localStorageService.init();
@@ -17,7 +18,8 @@ export function LocalStorageServiceFactory(localStorageService: LocalStorageServ
   declarations: [
     AppComponent,
     MainComponent,
-    SettingsComponent
+    SettingsComponent,
+    ValuesPipe
   ],
   imports: [
     BrowserModule,

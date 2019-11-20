@@ -1,4 +1,5 @@
 <form [formGroup]="settingsForm" (ngSubmit)="save()">
+
   <label for="hostInput">Host</label>
   <br>
   <input type="text"
@@ -7,14 +8,41 @@
          placeholder="192.168.0.2:13579"
          formControlName="host">
   <br>
+
+  <label for="layoutSelect">Layout</label>
+  <br>
+  <select id="layoutSelect"
+          class="form-control form-control-lg"
+          formControlName="layout">
+    <option *ngFor="let layout of layout | values"
+            [value]="layout">
+      {{layout}}
+    </option>
+  </select>
+  <br>
+
+  <label for="themeSelect">Theme</label>
+  <br>
+  <select id="themeSelect"
+          class="form-control form-control-lg"
+          formControlName="theme">
+    <option *ngFor="let theme of appTheme | values"
+            [value]="theme">
+      {{theme}}
+    </option>
+  </select>
+  <br>
+
   <button class="btn btn-primary btn-lg"
           type="submit"
           [disabled]="!settingsForm.valid">
     Save
   </button>
+
   <a *ngIf="hostExists"
      href="javascript:history.back()"
      class="btn btn-primary btn-lg">
     Cancel
   </a>
+
 </form>

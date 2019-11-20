@@ -4,6 +4,9 @@ import {Router} from '@angular/router';
 import {isNumeric} from 'rxjs/internal-compatibility';
 
 import {LocalStorageService} from '../services/local-storage.service';
+import {AppTheme} from '../app-theme.enum';
+import {Layout} from '../layout.enum';
+import {ThemeApplierService} from '../services/theme-applier.service';
 
 function validateNum(input: string, min: number, max: number): boolean {
   const num = Number(input);
@@ -37,20 +40,33 @@ export class SettingsComponent implements OnInit {
   hostExists: boolean;
   settingsForm: FormGroup;
 
+  appTheme = AppTheme;
+  layout = Layout;
+
   constructor(private localStorageService: LocalStorageService,
+              private themeApplierService: ThemeApplierService,
               private router: Router) {
   }
 
   ngOnInit() {
     const host = this.localStorageService.getHost();
+    const layout = this.localStorageService.getLayout();
+    const theme = this.localStorageService.getTheme();
+
     this.hostExists = host != null;
+
     this.settingsForm = new FormGroup({
-      host: new FormControl(host, [hostValidator])
+      host: new FormControl(host, [hostValidator]),
+      layout: new FormControl(layout),
+      theme: new FormControl(theme)
     });
   }
 
   save() {
     this.localStorageService.setHost(this.settingsForm.get('host').value);
+    this.localStorageService.setLayout(this.settingsForm.get('layout').value);
+    this.localStorageService.setTheme(this.settingsForm.get('theme').value);
+    this.themeApplierService.apply();
     this.router.navigateByUrl('/');
   }
 
