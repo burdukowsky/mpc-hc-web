@@ -14,7 +14,16 @@ export class LocalStorageService {
     layout: 'layout'
   };
 
-  constructor() {
+  init(): Promise<any> {
+    return new Promise(resolve => {
+      if (this.getTheme() == null) {
+        this.setTheme('dark-theme');
+      }
+      if (this.getLayout() == null) {
+        this.setLayout(Layout.Stretch);
+      }
+      resolve();
+    });
   }
 
   getHost(): string {
