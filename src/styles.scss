@@ -151,7 +151,6 @@ label {
   font-weight: 400;
   font-size: inherit;
   line-height: inherit;
-  background-color: white;
   border: 1px solid #ced4da;
   border-radius: $form-control-border-radius;
   margin: $form-control-margin;
@@ -170,6 +169,11 @@ body.default-theme {
       background-color: #3f51b5;
     }
   }
+
+  .form-control {
+    background-color: white;
+    color: black;
+  }
 }
 
 body.dark-theme {
@@ -180,5 +184,14 @@ body.dark-theme {
     &.btn-primary {
       background-color: #424242;
     }
+  }
+
+  .form-control {
+    background-color: transparent;
+    color: white;
+  }
+
+  select > option {
+    color: initial;
   }
 }
