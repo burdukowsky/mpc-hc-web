@@ -7,13 +7,27 @@
   min-height: 100%;
 
   $btn-min-width: 64px;
+  $control-margin: 0.5rem;
 
-  .btn {
-    min-width: $btn-min-width;
-    margin: 0.25rem;
+  .row {
+    &:first-child {
+      > .btn {
+        margin-top: $control-margin;
+      }
+    }
 
-    &.btn-lg {
-      min-width: $btn-min-width * $lg-multiplier;
+    .btn {
+      min-width: $btn-min-width;
+      margin-right: $control-margin;
+      margin-bottom: $control-margin;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.btn-lg {
+        min-width: $btn-min-width * $lg-multiplier;
+      }
     }
   }
 }
