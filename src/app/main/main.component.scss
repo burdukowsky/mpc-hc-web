@@ -10,6 +10,7 @@
 
   .btn {
     min-width: $btn-min-width;
+    margin: 0.25rem;
 
     &.btn-lg {
       min-width: $btn-min-width * $lg-multiplier;
@@ -23,13 +24,27 @@
   align-items: stretch;
   height: 100%;
 
+  $control-margin: 0.3rem;
+
   .row {
     display: flex;
     align-items: stretch;
     flex: 1;
 
+    &:first-child {
+      > * {
+        margin-top: $control-margin;
+      }
+    }
+
     > * {
       flex: 1;
+      margin-right: $control-margin;
+      margin-bottom: $control-margin;
+
+      &:first-child {
+        margin-left: $control-margin;
+      }
     }
   }
 }
