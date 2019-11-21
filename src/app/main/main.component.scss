@@ -1,8 +1,20 @@
+@import "../../scss/variables";
+
 #classicLayout {
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 100%;
+
+  $btn-min-width: 64px;
+
+  .btn {
+    min-width: $btn-min-width;
+
+    &.btn-lg {
+      min-width: $btn-min-width * $lg-multiplier;
+    }
+  }
 }
 
 #stretchLayout {

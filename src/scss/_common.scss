@@ -1,6 +1,3 @@
-@import '~roboto-fontface/css/roboto/roboto-fontface.css';
-@import '~material-design-icons/iconfont/material-icons.css';
-
 *,
 *::before,
 *::after {
@@ -29,11 +26,6 @@ body {
 *:focus {
   outline: none;
 }
-
-$form-control-border-radius: 4px;
-$form-control-height: 36px;
-$form-control-margin: 0.25rem;
-$lg-multiplier: 1.5;
 
 .btn {
   position: relative;
