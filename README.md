@@ -1,6 +1,6 @@
 # MPC-HC Remote Control
 
-MPC-HC Remote Control - web application for remote control of MPC-HC player via built-in web server. [Link](http://mpc-hc.burdukowsky.tk/).
+MPC-HC Remote Control - web application for remote control of MPC-HC player via built-in web server.
 
 ## How to use this web application
 
@@ -10,7 +10,7 @@ MPC-HC Remote Control - web application for remote control of MPC-HC player via 
 
 ![MPC-HC settings](../assets/mpc-hc-settings.png?raw=true)
 
-3\. Go to the MPC-HC Remote Control website ([mpc-hc.burdukowsky.tk](http://mpc-hc.burdukowsky.tk/), for example) from Remote control device (Android smartphone, for example).
+3\. Go to the MPC-HC Remote Control website from Remote control device (Android smartphone, for example).
 
 4\. Set up ip-address and port of MPC-HC built-in web server and click "Save":
 
